@@ -1,6 +1,6 @@
 {
     "name": "imokhles/signature-field-for-backpack",
-    "description": "Easily toggle boolean attributes with a new field type.",
+    "description": "Easily add signature field to backpack admin panel.",
     "license": "MIT",
     "authors": [
         {
