@@ -1,0 +1,36 @@
+{
+    "name": "imokhles/signature-field-for-backpack",
+    "description": "Easily toggle boolean attributes with a new field type.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mokhlas Hussein",
+            "email": "mokhleshussien@aol.com",
+            "homepage": "https://imokhles.com"
+        }
+    ],
+    "homepage": "https://github.com/imokhles/signature-field-for-backpack",
+    "keywords": [
+        "Laravel",
+        "Backpack",
+        "Backpack for Laravel",
+        "Addon",
+        "Admin Panel",
+        "Signature"
+    ],
+    "require": {
+        "backpack/crud": "^4.1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "iMokhles\\SignatureFieldForBackpack\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "iMokhles\\SignatureFieldForBackpack\\AddonServiceProvider"
+            ]
+        }
+    }
+}
