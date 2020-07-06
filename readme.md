@@ -6,8 +6,9 @@
 This package provides a ```signature``` field type for the [Backpack for Laravel](https://backpackforlaravel.com/) administration panel. The ```signature``` field allows admins to **let customers sign documents, in a prettier way**. It uses [Signature Pad Library](https://github.com/szimek/signature_pad).
 
 
-## Screenshots
+## Screenshot
 
+![https://user-images.githubusercontent.com/1032474/86575263-a77d9b00-bf7f-11ea-8116-536f9c81ec53.gif](https://user-images.githubusercontent.com/1032474/86575263-a77d9b00-bf7f-11ea-8116-536f9c81ec53.gif)
 
 ## Installation
 
