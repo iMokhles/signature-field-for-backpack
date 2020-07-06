@@ -35,13 +35,13 @@
 </div>
 
 <div class="row">
-    <div class="signature-pad-wrapper" data-handle="signaturePad" style="margin-bottom: 20px; margin-left: 20px;">
+    <div class="signature-pad-wrapper" data-handle="signaturePad">
         <canvas id="signature-pad" class="signature-pad" width="450" height="200"></canvas>
     </div>
 </div>
-<div class="btn-group">
+<div class="">
     <input type="hidden" data-handle="hiddenImage" name="{{ $field['name'] }}" value="{{ $value }}">
-    <button class="btn btn-success" data-handle="confirm" type="button"><i class="la la-save"></i> Save</button>
+    <button class="btn btn-success btn-sm" data-handle="confirm" type="button"><i class="la la-check"></i> Done</button>
     <button class="btn btn-light btn-sm" data-handle="remove" type="button"><i class="la la-trash"></i> Clear</button>
 </div>
 
@@ -71,8 +71,9 @@
                 -webkit-user-select: none;
                 -ms-user-select: none;
                 user-select: none;
-                border: 1px solid #F5F5F5;
-                border-bottom: 1px solid black;
+                border: 1px dashed rgba(0,40,100,.12);
+                margin-bottom: 5px; 
+                margin-left: 15px;
             }
             .signature-pad {
                 position: absolute;
