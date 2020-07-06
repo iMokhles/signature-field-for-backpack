@@ -71,8 +71,7 @@
                 -webkit-user-select: none;
                 -ms-user-select: none;
                 user-select: none;
-                border: 1px solid #F5F5F5;
-                border-bottom: 1px solid black;
+                border: 1px dashed rgba(0,40,100,.12);
             }
             .signature-pad {
                 position: absolute;
