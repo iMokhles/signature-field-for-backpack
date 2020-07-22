@@ -29,7 +29,7 @@
 </div>
 <!-- Wrap the image or canvas element with a block element (container) -->
 <div class="row">
-    <div class="col-sm-6" data-handle="previewArea" style="margin-bottom: 20px;">
+    <div class="col-sm-6" data-handle="previewArea" hidden style="margin-bottom: 20px;">
         <img data-handle="mainImage" src="">
     </div>
 </div>
@@ -42,7 +42,8 @@
 <div class="">
     <input type="hidden" data-handle="hiddenImage" name="{{ $field['name'] }}" value="{{ $value }}">
     <button class="btn btn-success btn-sm" data-handle="confirm" type="button"><i class="la la-check"></i> Done</button>
-    <button class="btn btn-light btn-sm" data-handle="remove" type="button"><i class="la la-trash"></i> Clear</button>
+    <button class="btn btn-light btn-sm" data-handle="clear" type="button"><i class="la la-trash"></i> Clear</button>
+    <button hidden class="btn btn-light btn-sm" data-handle="remove" type="button"><i class="la la-trash"></i> Remove</button>
 </div>
 
 {{-- HINT --}}
@@ -72,7 +73,7 @@
                 -ms-user-select: none;
                 user-select: none;
                 border: 1px dashed rgba(0,40,100,.12);
-                margin-bottom: 5px; 
+                margin-bottom: 5px;
                 margin-left: 15px;
             }
             .signature-pad {
@@ -96,6 +97,7 @@
                 var $mainImage = element.find('[data-handle=mainImage]');
                 var $hiddenImage = element.find("[data-handle=hiddenImage]");
                 var $remove = element.find("[data-handle=remove]");
+                var $clear = element.find("[data-handle=clear]");
                 var $confirm = element.find("[data-handle=confirm]");
                 var $previews = element.find("[data-handle=previewArea]");
 
@@ -106,13 +108,17 @@
 
                 // Hide 'Remove' button if there is no image saved
                 if (!$hiddenImage.val()){
-                    $previews.hide();
+                    $previews.attr("hidden",true);
+                    $remove.attr("hidden",true);
                     $remove.hide();
                 } else {
                     // Make the main image show the image in the hidden input
+                    $previews.attr("hidden",false);
+                    $remove.attr("hidden",false);
                     $mainImage.attr('src', $hiddenImage.val());
                     $signPadElement.hide();
                     $confirm.hide();
+                    $clear.hide();
                 }
 
 
@@ -121,10 +127,13 @@
                     if (!signaturePad.isEmpty()) {
                         $signPadElement.hide();
                         $previews.show();
+                        $previews.attr("hidden",false);
+                        $remove.attr("hidden",false);
                         $mainImage.attr('src',data);
                         $hiddenImage.val(data);
                         $remove.show();
                         $confirm.hide();
+                        $clear.hide();
                     }
 
                 });
@@ -133,9 +142,15 @@
                     $mainImage.attr('src','');
                     $hiddenImage.val('');
                     $confirm.show();
+                    $clear.show();
                     $remove.hide();
                     $previews.hide();
+                    $previews.attr("hidden",true);
+                    $remove.attr("hidden",true);
                     $signPadElement.show();
+                });
+                $clear.click(function() {
+                    signaturePad.clear();
                 });
 
             }
