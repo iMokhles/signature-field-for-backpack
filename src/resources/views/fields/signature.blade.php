@@ -41,8 +41,8 @@
 </div>
 <div class="">
     <input type="hidden" data-handle="hiddenImage" name="{{ $field['name'] }}" value="{{ $value }}">
-    <button class="btn btn-success btn-sm" data-handle="confirm" type="button"><i class="la la-check"></i> Done</button>
-    <button class="btn btn-light btn-sm" data-handle="remove" type="button"><i class="la la-trash"></i> Clear</button>
+    <button class="btn btn-success btn-sm" data-handle="confirm" type="button"><i class="la la-check"></i> {{ trans('backpack::crud.save') }}</button>
+    <button class="btn btn-light btn-sm" data-handle="remove" type="button"><i class="la la-trash"></i> {{ trans('backpack::crud.clear') }}</button>
 </div>
 
 {{-- HINT --}}
